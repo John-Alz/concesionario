@@ -9,10 +9,11 @@ $tipo = $_POST['tipo'];
 $nombre = $_POST['nombre'];
 $precio = $_POST['precio'];
 $ciudad = $_POST['ciudad'];
+$anio = $_POST['anio'];
 
 // CREAMOS EL OBJETO A PARTIR DE LA CLASE CONSULTAS PARA ENVIAR LOS VALORES A UNA FUNCIÓN ESPECÍFICA
 $objConsultas = new ConsultasAdmin();
-$result = $objConsultas->editarVehiculos($id, $tipo, $nombre, $precio, $ciudad);
+$result = $objConsultas->editarVehiculos($id, $tipo, $nombre, $precio, $ciudad, $anio);
 
 if ($result) {
     echo "<script>alert('Vehículo editado correctamente');</script>";
