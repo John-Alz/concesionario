@@ -10,7 +10,7 @@ class ConsultasAdmin {
         $conexion = $objConexion->open();
     
         try {
-            $registrar = "INSERT INTO vehiculos (tipo, nombre, precio, ciudad, foto) 
+            $registrar = "INSERT INTO vehiculos (tipo, nombre, precio, ciudad, foto, anio) 
                           VALUES (:tipo, :nombre, :precio, :ciudad, :rutaFoto)";
             $result = $conexion->prepare($registrar);
             $result->bindParam(':tipo', $tipo);
@@ -18,6 +18,7 @@ class ConsultasAdmin {
             $result->bindParam(':precio', $precio);
             $result->bindParam(':ciudad', $ciudad);
             $result->bindParam(':rutaFoto', $rutaFoto);
+            $result->bindParam('anio', $anio);
             $result->execute();
     
             return $result->rowCount() > 0;
