@@ -11,7 +11,7 @@ class ConsultasAdmin {
     
         try {
             $registrar = "INSERT INTO vehiculos (tipo, nombre, precio, ciudad, foto, anio) 
-                          VALUES (:tipo, :nombre, :precio, :ciudad, :rutaFoto)";
+                          VALUES (:tipo, :nombre, :precio, :ciudad, :rutaFoto, anio)";
             $result = $conexion->prepare($registrar);
             $result->bindParam(':tipo', $tipo);
             $result->bindParam(':nombre', $nombre);
